@@ -94,7 +94,7 @@ The entire file is wrapped in an AMD define method, with all external module (fi
 `0.0.1` - Aug 27, 2014
 
 - Initial release, based on https://github.com/BoilerplateMVC/Backbone-Require-Boilerplate
-- realization of views, view collections, models (Need to rewrite and add tests... it is completely NOT understandable)
+- realization of views, view collections, models (Need to rewrite and add tests... hard to understand)
 - Button component
 - Panel component
 - Basic D&D support

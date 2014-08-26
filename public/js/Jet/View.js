@@ -502,6 +502,15 @@ define(
                 var cfg = {}, register = protoProps.register;
                 cfg[register.as] = { viewClass: ext };
                 Jet.baseTheme.addBuilders(register.accept, cfg);
+
+                // register collection as view for viewClass/Collection
+                var cfg = {};
+                cfg[register.as] = {
+                    modelParameter: "items", // ViewBuilder/Collection
+                    viewClass: ext.Collection
+                };
+                Jet.baseTheme.addBuilders(register.accept + "/Collection", cfg);
+
             }
 
             return ext;
@@ -700,6 +709,18 @@ define(
             template: templateList.block.list,
             decl: {
                 fields: collectionFields
+            },
+            // Collection should accept models and silently translate them into views
+            _prepareModel: function(attrs) {
+                if (attrs instanceof this.itemConstructor) {
+                    return attrs;
+                }
+                if (attrs instanceof StdClassImpl) {
+                    return new this.itemConstructor({
+                        model: attrs
+                    });
+                }
+                return this.itemConstructor.fromJSON(attrs);
             }
         });
 

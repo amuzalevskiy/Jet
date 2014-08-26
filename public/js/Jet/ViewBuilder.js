@@ -16,6 +16,7 @@ define(
                 fields: [
                     { name: "viewClass", jet: "Constructor", scope: Jet.getScope('Jet/View') },
                     { name: "options" },
+                    { name: "modelParameter", defaultValue: "model" },
                     { name: "template" }
                 ]
             },
@@ -24,7 +25,7 @@ define(
                 var constructor = this.getViewClass();
                 options = _.extend({}, this.options, options);
                 this.template && (options.template = this.template);
-                options.model = obj;
+                options[this.modelParameter] = obj;
                 return new constructor(options);
             }
         });

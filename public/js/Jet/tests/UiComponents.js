@@ -201,6 +201,7 @@
                                 }
                             }
                         ]);
+                        actionCollection.getView('view').renderTo(el);
                     },
                     "! Buttons and groups": function(el){
                         (new Label({
