@@ -1,0 +1,20 @@
+<dl>
+    <dt>Название</dt>
+    <dd><%= include('name', 'UI/Jet/Field/Text', modelObj.acc("name")) %></dd>
+</dl>
+<dl>
+    <dt>Код продукта</dt>
+    <dd><%= include('code', 'UI/Jet/Field/Text', modelObj.acc("code")) %></dd>
+</dl>
+<dl>
+    <dt>Цена</dt>
+    <dd><%= include('price', 'UI/Jet/Field/Int', modelObj.acc("price")) %></dd>
+</dl>
+<dl>
+    <dt>Описание</dt>
+    <dd><%= include('description', 'UI/Jet/Form/Rich', modelObj.acc("description")) %></dd>
+</dl>
+
+<dl>
+    <dd><button class="save">Save</button></dd>
+</dl>

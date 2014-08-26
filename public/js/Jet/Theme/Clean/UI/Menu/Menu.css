@@ -1,0 +1,28 @@
+.vertical-menu a{
+    display: block;
+    padding: 10px;
+    text-decoration: none;
+    color: black;
+    border: solid 1px #3f86c7;
+    margin-bottom: -1px;
+}
+.vertical-menu a:hover{
+    text-decoration: none;
+    color: black;
+    background: #cfe2f3;
+}
+.vertical-menu a.current-folder {
+    background: #9fc5e8;
+}
+.vertical-menu a.current-item {
+    background: #9fc5e8;
+}
+
+.horizontal-menu a{
+    float: left;
+    margin-bottom: 0px;
+    margin-left: -1px;
+}
+.horizontal-menu{
+    width: 100%;
+}

@@ -1,0 +1,22 @@
+.accordion{
+    border: solid 1px #3f86c7;
+    margin-bottom: -1px;
+}
+.accordion .title {
+    border-bottom: solid 1px #3f86c7;
+    margin-bottom: -1px;
+    padding: 3px 10px;
+    background: #CFE2F3;
+}
+.accordion .title.collapsed {
+    background: white;
+}
+.accordion .title:hover {
+    background: #bFd2e3;
+}
+.accordion .content {
+    padding: 10px;
+}
+.triangle {
+    float: right;
+}

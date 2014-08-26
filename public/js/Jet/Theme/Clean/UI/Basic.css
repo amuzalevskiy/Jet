@@ -1,0 +1,7 @@
+.ui-vpanel-item{
+    overflow: hidden;
+}
+.ui-hpanel-item{
+    float: left;
+    overflow: hidden;
+}

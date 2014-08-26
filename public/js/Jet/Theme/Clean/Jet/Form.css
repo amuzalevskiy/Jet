@@ -1,0 +1,7 @@
+input.j-input[type=text] {
+    width: 100%;
+    box-sizing: border-box;
+    min-width: 25px;
+    padding: 14px 7px;
+    margin: 0;
+}

@@ -1,0 +1,6 @@
+<div class="ui-input">
+    <div class="ui-input-wrapper">
+        <input name="<%= state.property %>" type="<%= state.type %>" placeholder="<%= state.placeholder %>" value="<%= view.value %>" <%= state.disabled?'disabled="disabled" ':'' %><%= state.step?'step="' + state.step + '" ':'' %><%= state.required?'required ':'' %>/>
+    </div>
+    <%= include(modelObj.getErrors()) %>
+</div>

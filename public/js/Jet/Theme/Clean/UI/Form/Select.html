@@ -1,0 +1,8 @@
+<div class="ui-input">
+    <div class="ui-input-wrapper">
+        <select name="<%= state.property %>" <%= state.disabled?'disabled="disabled" ':'' %><%= state.required?'required ':'' %>>
+            <%  view.options.eachPair(function(name, key) { %><option value="<%= key %>"<%= key == obj.valueKey ? 'selected="selected"' : ''  %>><%= name %></option><% }); %>
+        </select>
+    </div>
+    <%= include(modelObj.getErrors()) %>
+</div>

@@ -1,0 +1,17 @@
+<## container {className: "model-list"} ##>
+<table>
+    <tr>
+        <th>Внутреннее имя</th>
+        <th>Метка</th>
+        <th>Базовый тип</th>
+        <th>Полей</th>
+    </tr>
+    <%= include('list', {itemTemplate: __block.row, tagName: 'tbody'}) %>
+</table>
+<block:row>
+    <## container {tagName: "tr"} ##>
+    <td><%= modelObj.prototype.moduleId %></td>
+    <td><%= modelObj.prototype.declaration.label %></td>
+    <td><%= modelObj.__super__.moduleId %></td>
+    <td><%= modelObj.prototype.declaration.get('fields').size() %></td>
+</block:row>

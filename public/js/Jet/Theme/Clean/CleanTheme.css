@@ -1,0 +1,67 @@
+@import "bootstrap.css";
+/*@import "/js/libs/select2/select2-bootstrap.css";*/
+.j-button{
+    margin: 0 2px;
+}
+.btn-group .j-button{
+    margin: 0;
+}
+
+.j-button-has-text .j-button-icon{
+    padding-right: 5px;
+}
+
+.j-button.j-button-has-icon{
+    padding: 4px 8px;
+}
+
+.j-panel {
+    border: solid 1px #ddd;
+    border-radius: 4px;
+    overflow: hidden;
+}
+
+.j-panel-collapsed .j-panel-body{
+    display: none;
+}
+.j-panel-header {
+    background: #ddd;
+    height: 30px;
+}
+.j-panel-header-icon {
+    padding: 4px 4px 4px 8px;
+}
+
+.j-panel-body {
+    min-height: 10px;
+}
+
+.j-panel-body-html{
+    padding: 5px 8px;
+}
+.j-panel-title {
+    padding: 5px 8px;
+    width: 100%;
+}
+.j-panel-header-with-icon .j-panel-title{
+    padding-left: 0;
+}
+.j-panel-icon {
+
+}
+.j-header-button {
+    margin: 3px;
+    padding: 2px 5px;
+}
+
+.j-header-button:hover {
+    background: #ccc;
+    padding: 1px 4px;
+    border: 1px solid #bbb;
+}
+.j-drop-placeholder {
+    min-height:1px;
+    min-width: 1px;
+    background: #ccc;
+    outline: solid 1px #ccc;
+}

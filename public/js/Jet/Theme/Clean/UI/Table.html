@@ -1,0 +1,2 @@
+<block:TH><%= modelObj.get("label") %></block:TH>
+<block:TR><% view.columns.each(function(column) { %><td><%= column.get("field").getFromModel(modelObj) %></td><% }); %></block:TR>

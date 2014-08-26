@@ -1,0 +1,3 @@
+<## container {tagName:"ul", className:"ui-form-error-list"} ##>
+<## changeEvents ["add","remove","reset","change"] ##>
+<%  modelObj.each(function(item) { %><li class='ui-form-error'><%= item.getMessage() %></li><% }); %>

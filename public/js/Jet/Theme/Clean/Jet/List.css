@@ -1,0 +1,19 @@
+.j-l-vertical, .j-l-vertical-raw{
+    display: block;
+    float: none;
+}
+.j-l-vertical-raw {
+    width: auto !important;
+}
+.j-l-horizontal {
+    display: table-cell;
+    vertical-align: top;
+}
+.j-l-flow {
+    display: block;
+    float: left;
+}
+.j-l-flowRight {
+    display: block;
+    float: right;
+}

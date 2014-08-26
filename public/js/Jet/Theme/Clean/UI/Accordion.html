@@ -1,0 +1,2 @@
+<div class='title<% if (state.collapsed) { %> collapsed<% } %>'><div class="triangle"><%= !state.collapsed ? '&#x25B2;' : '&#x25BC;'%></div><%= model.title %></div>
+<% if (!state.collapsed) { %><div class='content'><%= _.isString(model.content) ? model.content : include('content', model.content)  %></div><% } %>

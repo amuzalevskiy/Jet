@@ -1,0 +1,4 @@
+node_modules
+.idea
+public/js/libs/tmp
+public/js/Old

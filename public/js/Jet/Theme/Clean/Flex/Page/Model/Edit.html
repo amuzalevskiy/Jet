@@ -1,0 +1,35 @@
+<## container {className: "model-editor"} ##>
+<h4>Основные свойства</h4>
+    <dl>
+        <dt>Идентификатор</dt>
+        <dd><%= modelObj.prototype.moduleId %></dd>
+    </dl>
+    <dl>
+        <dt>Name</dt>
+        <dd><%= include('name', 'UI/Jet/Field/Text', modelObj.prototype.declaration.acc("name")) %></dd>
+    </dl>
+    <dl>
+        <dt>Type</dt>
+        <dd><%= include('label', 'UI/Jet/Field/Text', modelObj.prototype.declaration.acc("label")) %></dd>
+    </dl>
+<h4>Поля</h4>
+<table>
+    <tr>
+        <th>Внутреннее имя</th>
+        <th>Метка</th>
+        <th>Тип</th>
+        <th>Описание</th>
+        <th>Комментарий</th>
+    </tr>
+    <%= include('fieldList', {itemTemplate: __block.row, tagName: 'tbody'}) %>
+    <block:row>
+        <## container {tagName: "tr"} ##>
+        <## changeEvents ["change"] ##>
+            <td><%= model.name %></td>
+            <td><%= model.label %></td>
+            <td><%= model.type %></td>
+            <td><%= modelObj.getShortDescription() %></td>
+            <td><%= model.comment %></td>
+    </block:row>
+</table>
+<%= include('fieldEditor') %>

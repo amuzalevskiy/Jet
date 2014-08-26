@@ -1,0 +1,8 @@
+<%
+    modelObj.each(function(pageNode) {
+        if (pageNode.hasDirectLink() && pageNode.get('hidden') !== true) { %>
+            <a class="<%= pageNode.get('isCurrent')? 'current-item ':'' %><%= pageNode.get('isCurrentFolder')? 'current-folder':'' %>" href ="#<%= pageNode.getLink() %>"><%= pageNode.provideTitle() %></a>
+<%
+        }
+    });
+%>
