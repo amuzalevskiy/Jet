@@ -46,7 +46,12 @@ define(
                 var silent = (options && options.silent),
                     at = (options && options.at);
                 for (var i = items.length - 1; i >= 0; i--) {
-                    var model = this._prepareModel(items[i]);
+                    var item = items[i];
+                    if(item === undefined) {
+                        // ignore
+                        continue;
+                    }
+                    var model = this._prepareModel(item);
                     if (-1 == this.indexOf(model))
                         this.listenTo(model, 'all', this._onModelEvent);
                     if (at !== undefined) {

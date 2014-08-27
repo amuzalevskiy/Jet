@@ -8,6 +8,7 @@
         'Jet/Model/Action',
 
         'Jet/View/Panel',
+        'Jet/View/Panel/Tab',
         'Jet/View/Button',
         'Jet/View/ButtonGroup',
         'Jet/View/Link',
@@ -19,7 +20,7 @@
     function (
         Jet, StdClass, View, Template, Const,
         Action,
-        Panel, Button, ButtonGroup, Link, Label,
+        Panel, TabPanel, Button, ButtonGroup, Link, Label,
         Content
         ) {
 
@@ -133,6 +134,20 @@
                             title: "Collapsible panel",
                             content: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec at felis nec nisi laoreet ullamcorper. Sed aliquet quam at massa efficitur interdum. Nullam mattis eu neque et semper. Duis nulla neque, fringilla eu orci suscipit, porttitor elementum lacus. Donec felis mauris, lacinia sed fermentum sit amet, tincidunt sed orci.",
                             collapsible: true
+                        })).insertTo(el);
+                    },
+                    "TabPanel" : function (el) {
+                        (new TabPanel({
+                            items: [
+                                {
+                                    title: "Tab 1",
+                                    content: "Lorem"
+                                },
+                                {
+                                    title: "Tab 2",
+                                    content: "Dolorem"
+                                }
+                            ]
                         })).insertTo(el);
                     }
                 },

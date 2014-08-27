@@ -1,0 +1,9 @@
+<% if (hasHeader()) { %><%= getHeaderView() %><% } %>
+<ul class="nav nav-tabs">
+    <% items.each(function (item, index) { %>
+    <li<%= index==selected ? ' class="active"' : '' %>>
+        <a><%= item.getTitle() %></a>
+    </li>
+    <% }) %>
+</ul>
+<div class="j-tab-panel-content"><%= getBodyView() %></div>
