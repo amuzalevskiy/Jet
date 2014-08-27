@@ -444,7 +444,7 @@ define(
             },
 
             toString: function (context) {
-                !context && (context = Jet.getContext());
+                !context && (context = Jet.getContext() || this.owner);
                 this.setOwner(context);
                 if (context) {
                     context.addInclude(this.id, this);
@@ -452,8 +452,9 @@ define(
                     if (context.itemGroup && !this.groupRenderStarted) {
                         // avoid endless cycle
                         this.groupRenderStarted = true;
-                        return context.itemGroup.for(this).getOuterHTML();
+                        var res = context.itemGroup.for(this).getOuterHTML();
                         this.groupRenderStarted = false;
+                        return res;
                     }
                 }
                 return this.getOuterHTML();
