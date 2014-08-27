@@ -23,19 +23,19 @@ define(
                         jet: "Html"
                     },
                     {
-                        name: "tagName",
+                        name: "tag",
                         type: "String",
                         defaultValue: "div"
                     },
                     {
-                        name: "className",
+                        name: "cssClass",
                         jet: "TagList",
                         onUpdate: function (view) {
                             if (view.$el) {
                                 // should support template provided class names
-                                var className = ((view.template && view.template.container && view.template.container.className) ? ' ' + view.template.container.className : '');
-                                view[this.name] && (className = view[this.name] + className);
-                                view.$el.attr('class', className || "");
+                                var cssClass = ((view.template && view.template.container && view.template.container.cssClass) ? ' ' + view.template.container.cssClass : '');
+                                view[this.name] && (cssClass = view[this.name] + cssClass);
+                                view.$el.attr('class', cssClass || "");
                             }
                         }
                     }
@@ -47,7 +47,7 @@ define(
             },
 
             getOuterHTML: function () {
-                return "<" + this.tagName + ' id="' + this.id + '"' + (this.className ? (" class='" + this.className + "'") : "") + ">" + this.html + "</" + this.tagName + ">";
+                return "<" + this.tag + ' id="' + this.id + '"' + (this.cssClass ? (" class='" + this.cssClass + "'") : "") + ">" + this.html + "</" + this.tag + ">";
             },
 
             /**

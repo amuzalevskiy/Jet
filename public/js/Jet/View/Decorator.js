@@ -15,7 +15,7 @@ define([
                         type: View,
                         required: true,
                         onUpdate: function (model) {
-                            model.inner.addClassName(model.idScope + 'inner');
+                            model.inner.addCssClass(model.idScope + 'inner');
                         },
                         final: true
                     }

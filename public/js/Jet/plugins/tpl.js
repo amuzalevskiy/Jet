@@ -56,7 +56,7 @@ define(
         // resourcePath:blockName
         //
         // ... where resourcePath is the path to the HTML file that
-        // contains our templates and className is the class attribute
+        // contains our templates and cssClass is the class attribute
         // of the Script tag that contains our template markup.
         var parseResource = function( resourceName ){
 

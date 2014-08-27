@@ -15,7 +15,7 @@ define(
          * Creates button in the interface
          */
         var Button = View.Collection.extend({
-            viewClassName: "btn",
+            viewCssClass: "btn",
             moduleId: module.id,
 
             register: {
@@ -38,14 +38,14 @@ define(
                             return new Action(options);
                         },
                         onUpdate: function (button) {
-                            button.removeClassName("j-button-has-icon j-button-has-text");
+                            button.removeCssClass("j-button-has-icon j-button-has-text");
                             button.reset([]);
                             if (button.model.getIcon()) {
-                                button.addClassName("j-button-has-icon");
+                                button.addCssClass("j-button-has-icon");
                                 button.push(iconSet.get(button.model.getIcon(), "j-button-icon"));
                             }
                             if (button.model.getText()) {
-                                button.addClassName("j-button-has-text");
+                                button.addCssClass("j-button-has-text");
                                 button.push({html: button.model.getText()});
                             }
                         }

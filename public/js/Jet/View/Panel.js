@@ -56,10 +56,10 @@
                         jet: "Boolean",
                         defaultValue: false,
                         onUpdate: function (model) {
-                            if (model.hasClassName('j-panel-collapsed')) {
-                                (!model.collapsed) && model.removeClassName('j-panel-collapsed');
+                            if (model.hasCssClass('j-panel-collapsed')) {
+                                (!model.collapsed) && model.removeCssClass('j-panel-collapsed');
                             } else {
-                                model.collapsed && model.addClassName('j-panel-collapsed')
+                                model.collapsed && model.addCssClass('j-panel-collapsed')
                             }
                         }
                     }
@@ -71,7 +71,7 @@
 
             updateInner: function () {
                 var inner = this.inner = new View.Collection({
-                    className: "j-panel"
+                    cssClass: "j-panel"
                 });
                 this.updateHeaderView();
                 this.updateBodyView();
@@ -89,23 +89,23 @@
             updateHeaderView: function () {
                 var panel = this;
                 panel.headerView = new View.Collection({
-                    className: "j-panel-header",
+                    cssClass: "j-panel-header",
                     idScope: "j-panel-header-",
                     layout: Const.layout.horizontalRaw,
                     items: [
                         new SimpleView({
-                            className: "j-panel-title",
+                            cssClass: "j-panel-title",
                             html: this.getTitle()
                         }),
                         (panel.headerButtonsView = new View.Collection({
-                            className: "j-header-buttons",
+                            cssClass: "j-header-buttons",
                             idScope: "j-header-buttons-"
                         }))
                     ]
                 });
                 if (panel.icon) {
                     panel.headerView.items.unshift(iconSet.get(panel.icon, "j-panel-header-icon"));
-                    panel.headerView.addClassName('j-panel-header-with-icon');
+                    panel.headerView.addCssClass('j-panel-header-with-icon');
                 }
                 panel.eachHeaderButton(function(icon){
                     panel.headerButtonsView.items.push(iconSet.get(icon, "j-header-button"));
@@ -119,14 +119,14 @@
                     });
                     panel.headerButtonsView.items.push(this.collapseButton);
                 }
-                panel.headerButtonsView.group.addEvent('click', _.bind(panel.onHeaderButtonClick, panel));
+                panel.headerButtonsView.itemGroup.addEvent('click', _.bind(panel.onHeaderButtonClick, panel));
             },
 
             updateBodyView: function () {
                 var content = this.getContent();
                 if (content)
                     this.bodyView = new SimpleView({
-                        className: "j-panel-body j-panel-body-html",
+                        cssClass: "j-panel-body j-panel-body-html",
                         html: this.getContent()
                     });
             },

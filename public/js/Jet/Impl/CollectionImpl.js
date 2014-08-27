@@ -51,12 +51,15 @@ define(
                         this.listenTo(model, 'all', this._onModelEvent);
                     if (at !== undefined) {
                         this.items.splice(at,0,model);
-                        at = Math.max(at, this.length);
+                        at = Math.min(at, this.length);
                     } else {
                         this.items.push(model);
                         at = this.length;
                     }
-                    !silent && this.trigger('add', model, at);
+                    if (!silent) {
+                        this.length = this.items.length;
+                        this.trigger('add', model, at);
+                    }
                 }
                 this.length = this.items.length;
             },

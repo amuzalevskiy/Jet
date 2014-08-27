@@ -1,1 +1,1 @@
-<## container {tagName:"div", className: "ui-list-item-container"} ##><%  modelObj.each(function(item) { %><%= include(item, view.itemTemplate, {className:"ui-list-item-" + view.id}) %><% }); %>
+<## container {tag:"div", cssClass: "ui-list-item-container"} ##><%  modelObj.each(function(item) { %><%= include(item, view.itemTemplate, {cssClass:"ui-list-item-" + view.id}) %><% }); %>

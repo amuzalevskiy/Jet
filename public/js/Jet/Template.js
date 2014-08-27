@@ -22,12 +22,6 @@ define(
         var Template = StdClass.extend({
             moduleId: module.id,
 
-            container: {
-                tagName: 'div',
-                className: undefined,
-                attributes: undefined
-            },
-
             innerHTML: "",
 
             getInnerHTML: function (owner) {

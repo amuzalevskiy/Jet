@@ -8,10 +8,10 @@ define(
     function (Icon) {
 
         return {
-            get: function (name, className) {
+            get: function (name, cssClass) {
                 return new Icon({
                     name: name,
-                    className: className
+                    cssClass: cssClass
                 });
             }
         };

@@ -1,1 +1,1 @@
-<block:Panel><%  modelObj.each(function(item) { %><%= view.itemRenderer ? include(item, view.itemRenderer, {className:view.itemClassName}) : include(item, {className:view.itemClassName}) %><% }); %></block:Panel>
+<block:Panel><%  modelObj.each(function(item) { %><%= view.itemRenderer ? include(item, view.itemRenderer, {cssClass:view.itemCssClass}) : include(item, {cssClass:view.itemCssClass}) %><% }); %></block:Panel>

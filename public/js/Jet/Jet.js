@@ -7,8 +7,9 @@ define(
     ],
     function (Scope, Theme, Locale, BackboneEvents) {
 
-        var mixins = {};
-        var postponed = {};
+        var mixins = {},
+            postponed = {},
+            contexts = [];
 
         // it's global
         Jet = {
@@ -85,6 +86,34 @@ define(
                     }
                 }
                 delete postponed[mixinName];
+            },
+
+            /**
+             * Used for context handling in views tree
+             *
+             * @returns View
+             */
+            getContext: function () {
+                return contexts[0];
+            },
+
+            /**
+             * Saves context to later usage
+             *
+             * @param ctx {View}
+             * @returns {Number}
+             */
+            pushContext: function (ctx) {
+                return contexts.unshift(ctx);
+            },
+
+            /**
+             * Drop context
+             *
+             * @returns {View}
+             */
+            popContext: function () {
+                return contexts.shift();
             },
 
             createEmptyObj: function () {

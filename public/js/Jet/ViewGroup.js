@@ -61,17 +61,17 @@ define([
                     jet: "KeyValueList",
                     onUpdate: function (group) {
                         var events = _.clone(group[this.name]),
-                            className = group.mainClass;
+                            cssClass = group.mainClass;
                         for (var key in events) {
                             var match = key.match(delegateEventSplitter);
                             var eventName = match[1], selector = match[2];
-                            var fullKey = eventName + ' .' + className + (selector === '' ? '' : ' ' + selector);
+                            var fullKey = eventName + ' .' + cssClass + (selector === '' ? '' : ' ' + selector);
                             (function(fn){
                                 group.owner.addEvent(
                                     fullKey,
                                     function (e) {
                                         var $currentTarget = $(e.currentTarget),
-                                            view = ($currentTarget.hasClass(className) ? $currentTarget : $currentTarget.parents('.' + className))[0].jetView;
+                                            view = ($currentTarget.hasClass(cssClass) ? $currentTarget : $currentTarget.parents('.' + cssClass))[0].jetView;
                                         fn.call(group, e, view);
                                     }
                                 );
@@ -106,7 +106,7 @@ define([
             decl: decl,
 
             for: function (view) {
-                view.addClassName(this.mainClass + ' ' + this.itemClass);
+                view.addCssClass(this.mainClass, this.itemClass);
                 this.inner = view;
                 return this;
             },
@@ -137,7 +137,7 @@ define([
             destroy: function () {
                 Stylesheet.removeRule('.' + this.mainClass);
                 this.eachChild(function (child) {
-                    child.removeClassName(this.mainClass);
+                    child.removeCssClass(this.mainClass);
                 }, this);
             },
             eachChild: function (fn, ctx) {

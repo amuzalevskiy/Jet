@@ -19,9 +19,9 @@ define(
                         name: "vertical",
                         jet: "Boolean",
                         onUpdate: function (model) {
-                            model.removeClassName('btn-group-vertical');
+                            model.removeCssClass('btn-group-vertical');
                             if (model.vertical) {
-                                model.addClassName('btn-group btn-group-vertical');
+                                model.addCssClass('btn-group btn-group-vertical');
                             }
                         }
                     },
@@ -29,9 +29,9 @@ define(
                         name: "collapse",
                         jet: "Boolean",
                         onUpdate: function (model) {
-                            model.removeClassName('btn-group');
+                            model.removeCssClass('btn-group');
                             if (model.collapse) {
-                                model.addClassName('btn-group');
+                                model.addCssClass('btn-group');
                             }
                         }
                     }

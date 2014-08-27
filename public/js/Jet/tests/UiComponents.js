@@ -57,7 +57,7 @@
 
             createBoxView: function (w, h, margin) {
                 margin = margin || 10;
-                var view = new View({ html: "", width: w, height: h});
+                var view = new View({ html: View.counter, width: w, height: h});
                 view.css.background = "url(/img/test-bg.png)";
                 view.css.border = "solid " + margin + "px white";
                 return view;
@@ -113,7 +113,7 @@
                         (new Panel({
                             title: "Panel",
                             content: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec at felis nec nisi laoreet ullamcorper. Sed aliquet quam at massa efficitur interdum. Nullam mattis eu neque et semper. Duis nulla neque, fringilla eu orci suscipit, porttitor elementum lacus. Donec felis mauris, lacinia sed fermentum sit amet, tincidunt sed orci."
-                        })).renderTo(el);
+                        })).insertTo(el);
                     },
                     "With header": function (el) {
                         (new Panel({
@@ -121,44 +121,44 @@
                             content: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec at felis nec nisi laoreet ullamcorper. Sed aliquet quam at massa efficitur interdum. Nullam mattis eu neque et semper. Duis nulla neque, fringilla eu orci suscipit, porttitor elementum lacus. Donec felis mauris, lacinia sed fermentum sit amet, tincidunt sed orci.",
                             icon: "hdd",
                             headerButtons: "remove"
-                        })).renderTo(el);
+                        })).insertTo(el);
                     },
                     "No header": function (el) {
                         (new Panel({
                             content: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec at felis nec nisi laoreet ullamcorper. Sed aliquet quam at massa efficitur interdum. Nullam mattis eu neque et semper. Duis nulla neque, fringilla eu orci suscipit, porttitor elementum lacus. Donec felis mauris, lacinia sed fermentum sit amet, tincidunt sed orci."
-                        })).renderTo(el);
+                        })).insertTo(el);
                     },
                     "Collapsible": function (el) {
                         (new Panel({
                             title: "Collapsible panel",
                             content: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec at felis nec nisi laoreet ullamcorper. Sed aliquet quam at massa efficitur interdum. Nullam mattis eu neque et semper. Duis nulla neque, fringilla eu orci suscipit, porttitor elementum lacus. Donec felis mauris, lacinia sed fermentum sit amet, tincidunt sed orci.",
                             collapsible: true
-                        })).renderTo(el);
+                        })).insertTo(el);
                     }
                 },
                 "Default class views": {
                     "Editor": function (el) {
-                        this.getModel().getView('edit').renderTo(el);
+                        this.getModel().getView('edit').insertTo(el);
                     },
                     "Viewer": function (el) {
-                        this.getModel().getView().renderTo(el);
+                        this.getModel().getView().insertTo(el);
                     },
                     "Table": function (el) {
-                        //this.getCollection().getView('edit').renderTo(el);
+                        //this.getCollection().getView('edit').insertTo(el);
                     }
                 },
                 "Fields": {
                     "String": function (el) {
-                        this.getModel().getProperty('string').getView('edit').renderTo(el);
+                        this.getModel().getProperty('string').getView('edit').insertTo(el);
                     },
                     "Int": function (el) {
-                        this.getModel().getProperty('int').getView('edit').renderTo(el);
+                        this.getModel().getProperty('int').getView('edit').insertTo(el);
                     },
                     "Float": function (el) {
-                        this.getModel().getProperty('float').getView('edit').renderTo(el);
+                        this.getModel().getProperty('float').getView('edit').insertTo(el);
                     },
                     "Date": function (el) {
-                        this.getModel().getProperty('date').getView('edit').renderTo(el);
+                        this.getModel().getProperty('date').getView('edit').insertTo(el);
                     },
                 },
                 "Validation": {
@@ -174,9 +174,9 @@
                             }
                         });
 
-                        action.getView('view').renderTo(el);
+                        action.getView('view').insertTo(el);
 
-                        action.getView('link').renderTo(el);
+                        action.getView('link').insertTo(el);
 
                         var actionCollection = new Action.Collection([
                             {
@@ -201,25 +201,25 @@
                                 }
                             }
                         ]);
-                        actionCollection.getView('view').renderTo(el);
+                        actionCollection.getView('view').insertTo(el);
                     },
                     "! Buttons and groups": function(el){
                         (new Label({
                             label: "Clean",
                             inner: new Button({text: "Save", callback: buttonCallback})
-                        })).renderTo(el);
+                        })).insertTo(el);
                         (new Label({
                             label: "Disabled",
                             inner: new Button({text: "Edit", disabled: true, callback: buttonCallback})
-                        })).renderTo(el);
+                        })).insertTo(el);
                         (new Label({
                             label: "With icon",
                             inner: new Button({text: "Like", icon: "thumbs-up", callback: buttonCallback})
-                        })).renderTo(el);
+                        })).insertTo(el);
                         (new Label({
                             label: "Icon-only",
                             inner: new Button({icon: "thumbs-up", callback: buttonCallback})
-                        })).renderTo(el);
+                        })).insertTo(el);
 
                         (new Label({
                             label: "Button group",
@@ -229,7 +229,7 @@
                                     {text: "Cancel", callback: buttonCallback}
                                 ]
                             })
-                        })).renderTo(el);
+                        })).insertTo(el);
                         (new Label({
                             label: "Collapsed Button group",
                             inner: new ButtonGroup({
@@ -243,7 +243,7 @@
                                     {icon: "chevron-right", callback: buttonCallback}
                                 ]
                             })
-                        })).renderTo(el);
+                        })).insertTo(el);
 
                         (new Label({
                             label: "Vertical button group",
@@ -255,7 +255,7 @@
                                     {icon: "envelope", text: "Send", callback: buttonCallback}
                                 ]
                             })
-                        })).renderTo(el);
+                        })).insertTo(el);
                     },
                     "! Supported icons with <img src='http://glyphicons.com/wp-content/themes/glyphicons/sk/public/img/logo.svg'/>": function(el){
                         var all = "glass music search envelope heart star star-empty user film th-large th th-list ok remove zoom-in zoom-out off signal cog trash home file time road download-alt download upload inbox play-circle repeat refresh list-alt lock flag headphones volume-off volume-down volume-up qrcode barcode tag tags book bookmark print camera font bold italic text-height text-width align-left align-center align-right align-justify list indent-left indent-right facetime-video picture pencil map-marker adjust tint edit share check move step-backward fast-backward backward play pause stop forward fast-forward step-forward eject chevron-left chevron-right plus-sign minus-sign remove-sign ok-sign question-sign info-sign screenshot remove-circle ok-circle ban-circle arrow-left arrow-right arrow-up arrow-down share-alt resize-full resize-small plus minus asterisk exclamation-sign gift leaf fire eye-open eye-close warning-sign plane calendar random comment magnet chevron-up chevron-down retweet shopping-cart folder-close folder-open resize-vertical resize-horizontal hdd bullhorn bell certificate thumbs-up thumbs-down hand-right hand-left hand-up hand-down circle-arrow-right circle-arrow-left circle-arrow-up circle-arrow-down globe wrench tasks filter briefcase fullscreen";
@@ -268,9 +268,9 @@
                                 callback: buttonCallback
                             }))
                         });
-                        list.group.setWidth(130);
-                        list.group.setMargin(4);
-                        list.renderTo(el);
+                        list.itemGroup.setWidth(130);
+                        list.itemGroup.setMargin(4);
+                        list.insertTo(el);
                     }
                 },
                 "View.Collection - sorting is enabled for all View.Collections":{
@@ -281,7 +281,7 @@
                             sortable: true,
                             items: this.getViewCollection()
                         });
-                        list.renderTo(el);
+                        list.insertTo(el);
                     },
                     "overflow: auto": function (el) {
                         var list = new View.Collection({
@@ -291,7 +291,7 @@
                             overflow: "auto",
                             items: this.getViewCollection()
                         });
-                        list.renderTo(el);
+                        list.insertTo(el);
                     },
                     "Layout - horizontal": function (el) {
                         var list = new View.Collection({
@@ -302,7 +302,7 @@
                             layout: Const.layout.horizontal,
                             items: this.getViewCollection()
                         });
-                        list.renderTo(el);
+                        list.insertTo(el);
                     },
                     "Layout - horizontal raw<br/><small>means no height setup</small>": function (el) {
                         var list = new View.Collection({
@@ -313,7 +313,7 @@
                             layout: Const.layout.horizontalRaw,
                             items: this.getViewCollection()
                         });
-                        list.renderTo(el);
+                        list.insertTo(el);
                     },
                     "Layout - vertical": function (el) {
                         var list = new View.Collection({
@@ -324,7 +324,7 @@
                             layout: Const.layout.vertical,
                             items: this.getViewCollection()
                         });
-                        list.renderTo(el);
+                        list.insertTo(el);
                     },
                     "Layout - vertical raw<br/><small>means no width setup</small>": function (el) {
                         var list = new View.Collection({
@@ -335,7 +335,7 @@
                             layout: Const.layout.verticalRaw,
                             items: this.getViewCollection()
                         });
-                        list.renderTo(el);
+                        list.insertTo(el);
                     },
                     "Layout - flow": function (el) {
                         var list = new View.Collection({
@@ -346,7 +346,7 @@
                             layout: Const.layout.flow,
                             items: this.getViewCollection()
                         });
-                        list.renderTo(el);
+                        list.insertTo(el);
                     }
                 }
             }

@@ -14,7 +14,7 @@ define(
          */
         var Link = Button.extend({
             moduleId: module.id,
-            className: "j-link",
+            cssClass: "j-link",
 
             register: {
                 as: "link",
@@ -24,7 +24,7 @@ define(
             decl: {
                 fields: [
                     {
-                        name: "tagName",
+                        name: "tag",
                         defaultValue: "a"
                     },
                     {
